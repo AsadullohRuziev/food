@@ -1,27 +1,47 @@
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./Home";
-import Header from "./Header";
+import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Order from "./components/Order";
+import Popular from "./components/Popular";
+import Reviews from "./components/Reviews";
+import Speciality from "./components/Speciality";
+import Works from "./components/Works";
+import { FaAngleUp } from "react-icons/fa";
+import styled from "styled-components";
+
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/check">
-            <h1>checkout</h1>
-          </Route>
-          <Router path="/login">
-            <h1>Login</h1>
-          </Router>
-          <Route path="/">
-            <Header/>
-            <Home/>
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <>
+      <Header />
+      <Home />
+      <Speciality/>
+      <Popular/>
+      <Works/>
+      <Gallery/>
+      <Reviews/>
+      <Order/>
+      <Footer/>
+      <Scroll>
+        <FaAngleUp/>
+      </Scroll>
+    </>
   );
 }
 
 export default App;
+
+
+const Scroll  = styled.a`
+      position: fixed;
+  top:-120%;
+  right:2rem;
+  padding:.5rem 1.5rem;
+  font-size: 4rem;
+  background:var(--red);
+  color:#fff;
+  border-radius: .5rem;
+  transition: 1s linear;
+  z-index: 1000;
+`
